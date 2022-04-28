@@ -17,6 +17,7 @@ class employee
             $this->email = $e;
             $this->phone = $p;
     }
+
     public function getFullName():string
     {
         return $this->name . " " . $this->family;

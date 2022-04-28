@@ -1,6 +1,7 @@
 <?php
 namespace App\pages;
 use App\lib\pages\page;
+use App\lib\core\address;
 
 class createpage extends page
 {
@@ -9,7 +10,7 @@ class createpage extends page
         $employee = $params[0];
 ?>
                         <div>
-                            <form action="<?php echo "/auto1/index.php?task=update&empid=" . $employee->id; ?>" method="post">
+                            <form action="<?php echo address::rootaddress . "index.php?task=insert"?>" method="post">
                         <div style="text-align:center">
                             <H2>Employee Edit</H2>
                         </div>
@@ -52,8 +53,8 @@ class createpage extends page
                                 </thead>
                             </table>
                             <div style="margin-top:7px;">
-                                <input type="submit" value="Update" /> &nbsp; 
-                                <a href="/auto1/">Back to list</a>
+                                <input type="submit" value="Insert" /> &nbsp; 
+                                <a href="<?php echo address::rootaddress; ?>">Back to list</a>
                             </div>
                         </div>
                         </form>

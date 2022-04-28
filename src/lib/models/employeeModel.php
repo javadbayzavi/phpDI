@@ -42,6 +42,20 @@ class employeeModel extends model
         }
     }
 
+    public function insertEmployee(employee $employee):bool
+    {
+        try {
+            $this->command = "Insert into employee (name,family,phone,email) VALUES('{$employee->name}','{$employee->family}','{$employee->phone}', '{$employee->email}')";
+            $com = $this->connection->prepare($this->command);
+            print_r($com);
+            $com->execute();
+            return true;
+        } catch (\Throwable $th) {
+            throw $th;
+            return false;
+        }
+    }    
+    
     public function deleteEmployee(array $ids):bool
     {
         try {

@@ -1,6 +1,7 @@
 <?php
 namespace App\pages;
 use App\lib\pages\page;
+use App\lib\core\address;
 
 class listpage extends page
 {
@@ -67,9 +68,9 @@ class listpage extends page
                                             ?>
                                         </td>
                                         <td>
-                                            <a href="<?php echo "/auto1/index.php?task=edit&empid=" . $item->id; ?>">Edit</a> &nbsp; - &nbsp;
-                                            <a href="<?php echo "/auto1/index.php?task=details&empid=" . $item->id; ?>">Details</a> &nbsp; - &nbsp;
-                                            <a href="<?php echo "/auto1/index.php?task=delete&empid=" . $item->id; ?>">Delete</a>
+                                            <a href="<?php echo address::rootaddress . "index.php?task=edit&empid=" . $item->id; ?>">Edit</a> &nbsp; - &nbsp;
+                                            <a href="<?php echo address::rootaddress . "index.php?task=details&empid=" . $item->id; ?>">Details</a> &nbsp; - &nbsp;
+                                            <a href="<?php echo address::rootaddress . "index.php?task=delete&empid=" . $item->id; ?>">Delete</a>
                                         </td>
                                     </tr>
                                     <?php

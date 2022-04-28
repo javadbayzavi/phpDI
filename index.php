@@ -1,10 +1,13 @@
 <?php
 require_once("vendor/autoload.php");
+use App\lib\core\address;
 use App\controllers\emplist;
 use App\controllers\details;
 use App\controllers\edit;
 use App\controllers\update;
 use App\controllers\delete;
+use App\controllers\create;
+use App\controllers\insert;
 
 $task = (isset($_GET["task"]))? $_GET["task"] : "";
 $empId = (isset($_GET["empid"]))? $_GET["empid"] : 0;
@@ -20,8 +23,11 @@ switch ($task) {
         $controller = new emplist();
         break;
     case "create":
+        $controller = new create();
         break;
     case "insert":
+        $controller = new insert();
+        $controller->run($_POST);        
         break;
     case "edit":
         $controller = new edit();
@@ -58,19 +64,19 @@ switch ($task) {
                 <div id="actionbar" style="width:100%;float:left;text-align:center">
                     <ul id="actionlist" style="float:left;list-style:none;display:inline-block">
                         <li id="listitem" style="float:left; margin-right:5px; padding: 4px">
-                            <a href="/auto1/index.php">Index</a>
+                            <a href="<?php echo address::rootaddress; ?>index.php">Index</a>
                         </li>
                         <li id="listitem" style="float:left; margin-right:5px; padding: 4px">
-                            <a href="/auto1/index.php?task=create">Create</a>
+                            <a href="<?php echo address::rootaddress; ?>index.php?task=create">Create</a>
                         </li>
                         <li id="listitem" style="float:left; margin-right:5px; padding: 4px">
-                            <a href="/auto1/index.php?task=list">List</a>
+                            <a href="<?php echo address::rootaddress; ?>index.php?task=list">List</a>
                         </li>
                     </ul>
                 </div>
                 <div id="mainBody" style="float:left;width:100%">
                     <div id="searchBd" style="margin-top:4px">
-                        <form action="/auto1/?task=list" method="post">
+                        <form action="<?php echo address::rootaddress; ?>?task=list" method="post">
                             <div>
                                 <label>Search:</label>
                                 <input type="text" name="txtsearch" placeholder="Type here..." />
