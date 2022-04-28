@@ -4,6 +4,15 @@
         "psr-4": {
             "App\\" :["src/"]
         }
-    }
+    },
+    "authors": [
+        {
+            "email": "javadbayzavi@gmail.com",
+            "name": "Javad Bayzavi",
+            "homepage": "https://github.com/javadbayzavi",
+            "role": "Senior Software Engineer"
+        }
+    ],
+    "description": "This package is a siple solution for Dependency Injection fro the scratch"
 
 }
