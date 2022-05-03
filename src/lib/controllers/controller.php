@@ -3,6 +3,8 @@ namespace App\lib\controllers;
 use App\lib\models\model;
 use App\lib\pages\page; 
 use App\lib\models\employeeModel;
+use App\lib\core\address;
+
 abstract class controller
 {
     protected employeeModel $dataProvider;
@@ -27,7 +29,7 @@ abstract class controller
     {
         if($target == null)
         {
-            header('Location: /auto1/');
+            header('Location: ' . address::rootaddress);
         }
         else
         {
